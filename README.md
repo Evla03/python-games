@@ -1,2 +1,5 @@
-# python-games
-A small repository for all my python games.
+# Python Games
+## Here is all my python games. (often made in pygame)
+
+### Games:
+- **Minesweeper**
