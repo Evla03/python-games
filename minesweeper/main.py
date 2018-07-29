@@ -51,6 +51,9 @@ def generate_board():
 
 
 def generate_mines(block):
+    if mines >= count**2:
+        raise ValueError('Mine count too high.')
+        return
     mine_list = []
     for i in range(mines):
         while True:
@@ -116,6 +119,16 @@ def win():
         elif not block.mine:
             block.reveal()
     print('win')
+    screen.fill(bg_color)
+    tmp = pygame.font.Font(pygame.font.get_default_font(), 50).render('You won!', 1, bg_color)
+    pygame.display.set_mode((tmp.get_rect().w, tmp.get_rect().h))
+    while True:
+        screen.fill(bl_color2)
+        screen.blit(tmp, (0, 0))
+        pygame.display.flip()
+        for event in pygame.event.get():
+            if event.type == QUIT:
+                stop()
 
 
 def checks():
