@@ -3,3 +3,4 @@
 
 #### Games:
 - Minesweeper
+- Random Game 1 (I don't know else what I could've called it)
