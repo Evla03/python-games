@@ -110,6 +110,11 @@ def get_number(cord):
 
 def lose():
     print('rip')
+    for block in board.values():
+        if not block.mine and not block.flagged:
+            block.reveal()
+        elif block.mine:
+            block.reveal()
 
 
 def win():
@@ -134,8 +139,6 @@ def win():
 def checks():
     for block in board.values():
         if block.mine and block.revealed:
-            for block in board.values():
-                block.reveal()
             lose()
             return False
 
