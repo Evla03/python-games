@@ -19,6 +19,14 @@ mine_path = [(0, 1), (0, -1), (1, 0), (-1, 0), (1, 1), (1, -1), (-1, 1), (-1, -1
 clear_path = [(1, 0), (0, 1), (-1, 0), (0, -1)]  # the path which the auto-reveal works in
 
 
+def asserts():
+    assert mines + 1 <= count**2
+    assert mine_path
+    assert clear_path
+    assert window_size
+    assert size > 0
+
+
 class Block:
     def __init__(self, x, y):
         self.number = None
@@ -51,9 +59,6 @@ def generate_board():
 
 
 def generate_mines(block):
-    if mines >= count**2:
-        raise ValueError('Mine count too high.')
-        return
     mine_list = []
     for i in range(mines):
         while True:
@@ -182,6 +187,7 @@ def draw():
     draw_grid()
 
 
+asserts()
 pygame.init()
 screen = pygame.display.set_mode(window_size)
 clock = pygame.time.Clock()
