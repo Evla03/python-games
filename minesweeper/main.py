@@ -16,8 +16,7 @@ caption = 'Minesweeper'  # window caption
 fps = 1000  # fps limit, pygame is limited to 1000
 window_size = size * count, size * count  # window size
 mine_path = [(0, 1), (0, -1), (1, 0), (-1, 0), (1, 1), (1, -1), (-1, 1), (-1, -1)]  # search path for the numbers on revealed blocks
-clear_path = [(1, 0), (0, 1), (-1, 0), (0, -1)]  # the path which the auto-reveal works in
-
+clear_path = mine_path  # the path which the auto-reveal works in
 
 def asserts():
     assert mines + 1 <= count**2
